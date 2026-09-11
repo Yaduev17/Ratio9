@@ -48,12 +48,29 @@ function initNavbar() {
   const menu = document.querySelector(".mobile-menu");
   if (!toggle || !menu) return;
 
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.style.overflow = isOpen ? "hidden" : "";
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+    if (lenisInstance) lenisInstance.start();
+    if (typeof gsap !== "undefined") gsap.killTweensOf(menu);
+    menu.style.clipPath = "inset(0 0 100% 0)";
+  }
 
-    if (isOpen && typeof gsap !== "undefined" && !prefersReducedMotion) {
+  function openMenu() {
+    menu.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    // body alone isn't enough — Lenis drives scroll independently of
+    // native overflow, so a swipe/scroll while the menu is opening can
+    // race the clip-path animation and leave the menu looking stuck
+    // half-open with the page showing through underneath.
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    if (lenisInstance) lenisInstance.stop();
+
+    if (typeof gsap !== "undefined" && !prefersReducedMotion) {
+      gsap.killTweensOf(menu);
       gsap.fromTo(
         menu,
         { clipPath: "inset(0 0 100% 0)" },
@@ -64,17 +81,19 @@ function initNavbar() {
         { opacity: 0, y: 24 },
         { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, delay: 0.2, ease: "power3.out" }
       );
-    } else if (!isOpen) {
-      menu.style.clipPath = "inset(0 0 100% 0)";
+    } else {
+      menu.style.clipPath = "inset(0 0 0% 0)";
     }
+  }
+
+  toggle.addEventListener("click", () => {
+    const willOpen = !menu.classList.contains("is-open");
+    if (willOpen) openMenu();
+    else closeMenu();
   });
 
   menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-    });
+    link.addEventListener("click", closeMenu);
   });
 }
 

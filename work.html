@@ -71,19 +71,24 @@
         <span></span><span></span>
       </button>
     </div>
-    <div class="mobile-menu">
-      <ul>
-        <li data-menu-link><a href="index.html">Home</a></li>
-        <li data-menu-link><a href="services.html">Services</a></li>
-        <li data-menu-link><a href="work.html">Work</a></li>
-        <li data-menu-link><a href="locations.html">Locations</a></li>
-        <li data-menu-link><a href="about.html">About</a></li>
-        <li data-menu-link><a href="process.html">Process</a></li>
-        <li data-menu-link><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary btn-block" data-menu-link>Let&rsquo;s Talk</a>
-    </div>
   </header>
+  <!-- Sibling of <header>, not a child — the navbar gains backdrop-filter
+       once scrolled, and backdrop-filter creates a new CSS containing
+       block for position:fixed descendants, which was collapsing this
+       menu to a ~72px sliver instead of filling the screen. Keeping it
+       outside the navbar avoids that entirely. -->
+  <div class="mobile-menu">
+    <ul>
+      <li data-menu-link><a href="index.html">Home</a></li>
+      <li data-menu-link><a href="services.html">Services</a></li>
+      <li data-menu-link><a href="work.html">Work</a></li>
+      <li data-menu-link><a href="locations.html">Locations</a></li>
+      <li data-menu-link><a href="about.html">About</a></li>
+      <li data-menu-link><a href="process.html">Process</a></li>
+      <li data-menu-link><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-block" data-menu-link>Let&rsquo;s Talk</a>
+  </div>
 
   <main>
     <div class="container page-header">
