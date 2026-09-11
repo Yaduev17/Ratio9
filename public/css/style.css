@@ -288,6 +288,21 @@ body:has(.project-hero) .navbar:not(.is-scrolled) .logo .text-lime {
   color: var(--lime);
 }
 
+/* The homepage hero copy sits on a permanently dark scrimmed photo, so its
+   lime accent and secondary button must stay fixed regardless of theme —
+   .text-lime and .btn-secondary flip to theme-aware colors everywhere else. */
+.hero-content .text-lime {
+  color: var(--lime);
+}
+.hero-content .btn-secondary {
+  border-color: rgba(244, 242, 236, 0.25);
+  color: var(--offwhite);
+}
+.hero-content .btn-secondary:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
 /* ==========================================================================
    Page header (for interior pages: Services / Work / About / Process / Contact)
    ========================================================================== */
