@@ -97,6 +97,36 @@ function initNavbar() {
   });
 }
 
+const THEME_STORAGE_KEY = "ratio9-theme";
+
+/**
+ * Light/dark toggle. The actual theme is already applied before this runs
+ * (see the inline script in <head> of every page, which sets data-theme
+ * synchronously so there's no flash of the wrong theme) — this just wires
+ * up the button to flip it and remember the choice.
+ */
+function initThemeToggle() {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+
+  function setLabel(theme) {
+    toggle.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
+  }
+  setLabel(document.documentElement.getAttribute("data-theme") || "dark");
+
+  toggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const next = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    setLabel(next);
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, next);
+    } catch (e) {
+      /* localStorage unavailable (private browsing, etc.) — theme just won't persist */
+    }
+  });
+}
+
 /** Marks the current page's nav link with aria-current="page". */
 function markActiveNavLink() {
   const current = document.body.dataset.page;
@@ -168,6 +198,7 @@ function setFooterYear() {
 document.addEventListener("DOMContentLoaded", () => {
   initLenis();
   initNavbar();
+  initThemeToggle();
   markActiveNavLink();
   initScrollReveal();
   fillSiteInfo();
