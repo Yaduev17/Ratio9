@@ -750,6 +750,19 @@ body:has(.project-hero) .navbar:not(.is-scrolled) .logo .text-lime {
 /* ==========================================================================
    Team
    ========================================================================== */
+/* Founders row — always exactly 2, centered, sits above the main team grid.
+   Fixed 2-column grid (not auto-fit) so it never wraps to 1 or 3 columns. */
+.team-owners {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 260px));
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+@media (max-width: 639px) {
+  .team-owners { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
 .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 220px)); justify-content: center; gap: 24px; }
 .team-card-photo { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: 12px; background: var(--bg-soft); }
 .team-card-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-premium); }

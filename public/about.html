@@ -127,88 +127,30 @@
         <h2 class="heading-xl">Meet the <span class="text-lime">team.</span></h2>
       </div>
 
-      <div class="team-grid" id="team-grid">
-        <!--
-          TEAM MEMBERS — plain HTML, edit directly here.
-          Each person is one <article class="team-card">...</article> block.
-            - Remove someone: delete their whole <article> block.
-            - Add someone: copy a whole <article> block, paste it before the
-              closing </div> below, and change the photo, name, role, bio
-              and links.
-            - Change a photo: put the image file in assets/team/ and point
-              the <img src="..."> at it with a relative path like
-              "assets/team/yourname.jpg" — never a full C:\... path, it
-              will only work on this computer.
-        -->
+      <!--
+        TEAM MEMBERS — plain HTML, edit directly here.
 
-        <article class="team-card" data-reveal-card>
-          <div class="team-card-photo">
-            <img src="assets/team/Gautham_Ratio9.jpg" alt="Gautham" loading="lazy" />
-            <div class="team-card-overlay">
-              <p>Software Developer, Full-Stack Engineer, QA/QC/ Penetration Tester, </p>
-              <div class="socials">
-                <a href="https://www.linkedin.com/in/gautham-krishna-35617020b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </div>
-            </div>
-            <span class="team-card-underline"></span>
-          </div>
-          <p class="name">Gautham Krishna</p>
-          <p class="role">Technical Lead- Software Developer</p>
-          <div class="team-card-details">
-            <p>Software Developer, Full-Stack Engineer, QA/QC/ Penetration Tester, </p>
-            <div class="socials">
-              <a href="https://www.linkedin.com/in/gautham-krishna-35617020b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-          </div>
-        </article>
+        Two groups now:
+          1. #team-owners  — the founders, ALWAYS exactly 2 (Akshay + Yadu),
+             rendered in their own row above everyone else.
+          2. #team-grid    — everyone else, ordered by seniority:
+             Technical Lead > Sr. members > others.
 
-        <article class="team-card" data-reveal-card>
-          <div class="team-card-photo">
-            <img src="assets/team/Yadu_Ratio9.jpg" alt="Yadu" loading="lazy" />
-            <div class="team-card-overlay">
-              <p>Web Developer, Solutions Architect, UI/UX Designer, Penetration Tester, Network Security Analyst</p>
-              <div class="socials">
-                <a href="https://yaduev.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
-                <a href="https://www.linkedin.com/in/yadu-krishnan-e-v-90227a230/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </div>
-            </div>
-            <span class="team-card-underline"></span>
-          </div>
-          <p class="name">Yadu Krishnan E V</p>
-          <p class="role">Technical Specialist / Operations</p>
-          <div class="team-card-details">
-            <p>Web Developer, Solutions Architect, UI/UX Designer, Penetration Tester, Network Security Analyst</p>
-            <div class="socials">
-              <a href="https://yaduev.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
-              <a href="https://www.linkedin.com/in/yadu-krishnan-e-v-90227a230/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-          </div>
-        </article>
+        Each person is one <article class="team-card">...</article> block.
+          - Remove someone: delete their whole <article> block.
+          - Add someone: copy a whole <article> block, paste it in the
+            appropriate group, and change the photo, name, role, bio
+            and links.
+          - Change a photo: put the image file in assets/team/ and point
+            the <img src="..."> at it with a relative path like
+            "assets/team/yourname.jpg" — never a full C:\... path, it
+            will only work on this computer.
+      -->
 
-         <article class="team-card" data-reveal-card>
-          <div class="team-card-photo">
-            <img src="assets/team/Shameel_Ratio9.jpg" alt="Shameel" loading="lazy" />
-            <div class="team-card-overlay">
-              <p>Web Developer, Solutions Architect, Software Engineer, Penetration Tester, Network Security Analyst</p>
-              <div class="socials">
-                <a href="https://shameelsafar.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
-                <a href="https://www.linkedin.com/in/shameel-c-17710325b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </div>
-            </div>
-            <span class="team-card-underline"></span>
-          </div>
-          <p class="name">Shameel C</p>
-          <p class="role">Technical Specialist / Software Developer</p>
-          <div class="team-card-details">
-            <p>Web Developer, Solutions Architect, Software Engineer, Penetration Tester, Network Security Analyst</p>
-            <div class="socials">
-              <a href="https://shameelsafar.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
-              <a href="https://www.linkedin.com/in/shameel-c-17710325b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-          </div>
-        </article>
+      <!-- FOUNDERS — always exactly 2, own row above the rest of the team -->
+      <div class="team-owners" id="team-owners">
 
-           <!-- Akshay CP — photo hotlinked from akshaycp.online.
+        <!-- Akshay CP — photo hotlinked from akshaycp.online.
              TODO before launch: download this image and host it locally
              (e.g. assets/team/akshay.jpg) instead of hotlinking another site. -->
         <article class="team-card" data-reveal-card>
@@ -234,8 +176,126 @@
           </div>
         </article>
 
-        <!-- Add more <article class="team-card"> blocks here as the team grows —
-             copy one of the two above and swap the photo, name, role, bio and links. -->
+        <article class="team-card" data-reveal-card>
+          <div class="team-card-photo">
+            <img src="assets/team/Yadu_Ratio9.jpg" alt="Yadu" loading="lazy" />
+            <div class="team-card-overlay">
+              <p>Web Developer, Solutions Architect, UI/UX Designer, Penetration Tester, Network Security Analyst</p>
+              <div class="socials">
+                <a href="https://yaduev.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                <a href="https://www.linkedin.com/in/yadu-krishnan-e-v-90227a230/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+            <span class="team-card-underline"></span>
+          </div>
+          <p class="name">Yadu Krishnan E V</p>
+          <p class="role">Head of Technical &amp;  Operations</p>
+          <div class="team-card-details">
+            <p>Web Developer, Solutions Architect, UI/UX Designer, Penetration Tester, Network Security Analyst</p>
+            <div class="socials">
+              <a href="https://yaduev.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
+              <a href="https://www.linkedin.com/in/yadu-krishnan-e-v-90227a230/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- REST OF TEAM — Technical Lead first, then Sr. members, then others -->
+      <div class="team-grid" id="team-grid">
+
+        <article class="team-card" data-reveal-card>
+          <div class="team-card-photo">
+            <img src="assets/team/Shameel_Ratio9.jpg" alt="Shameel" loading="lazy" />
+            <div class="team-card-overlay">
+              <p>Web Developer, Solutions Architect, Software Engineer, Penetration Tester, Network Security Analyst</p>
+              <div class="socials">
+                <a href="https://shameelsafar.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                <a href="https://www.linkedin.com/in/shameel-c-17710325b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+            <span class="team-card-underline"></span>
+          </div>
+          <p class="name">Shameel C</p>
+          <p class="role">Technical Lead- Software Developer</p>
+          <div class="team-card-details">
+            <p>Web Developer, Solutions Architect, Software Engineer, Penetration Tester, Network Security Analyst</p>
+            <div class="socials">
+              <a href="https://shameelsafar.in" target="_blank" rel="noopener noreferrer">Portfolio</a>
+              <a href="https://www.linkedin.com/in/shameel-c-17710325b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="team-card" data-reveal-card>
+          <div class="team-card-photo">
+            <img src="assets/team/Gautham_Ratio9.jpg" alt="Gautham" loading="lazy" />
+            <div class="team-card-overlay">
+              <p>Software Developer, Full-Stack Engineer, QA/QC/ Penetration Tester, </p>
+              <div class="socials">
+                <a href="https://www.linkedin.com/in/gautham-krishna-35617020b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+            <span class="team-card-underline"></span>
+          </div>
+          <p class="name">Gautham Krishna</p>
+          <p class="role">Sr. Technical Specialist / Software Developer</p>
+          <div class="team-card-details">
+            <p>Software Developer, Full-Stack Engineer, QA/QC/ Penetration Tester, </p>
+            <div class="socials">
+              <a href="https://www.linkedin.com/in/gautham-krishna-35617020b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rida Mariya — photo hotlinked from akshaycp.online.
+             TODO before launch: download this image and host it locally
+             (e.g. assets/team/rida.jpg) instead of hotlinking another site. -->
+        <article class="team-card" data-reveal-card>
+          <div class="team-card-photo">
+            <img src="assets/team/Rida_Ratio9.jpeg" alt="Rida Mariya" loading="lazy" />
+            <div class="team-card-overlay">
+              <p>Graphic designer and motion artist covering identity, UI/UX, motion graphics and AI-assisted content production.</p>
+              <div class="socials">
+                <a href="https://akshaycp.online" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                <a href="https://www.behance.net/akshay_cp" target="_blank" rel="noopener noreferrer">Behance</a>
+              </div>
+            </div>
+            <span class="team-card-underline"></span>
+          </div>
+          <p class="name">Rida Mariya</p>
+          <p class="role">Sr. Graphic Designer &amp; Motion Artist</p>
+          <div class="team-card-details">
+            <p>Graphic designer and motion artist covering identity, UI/UX, motion graphics and AI-assisted content production.</p>
+            <div class="socials">
+              <a href="https://akshaycp.online" target="_blank" rel="noopener noreferrer">Portfolio</a>
+              <a href="https://www.behance.net/akshay_cp" target="_blank" rel="noopener noreferrer">Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="team-card" data-reveal-card>
+          <div class="team-card-photo">
+            <img src="assets/team/Arathi_Ratio9.jpeg" alt="Arathi" loading="lazy" />
+            <div class="team-card-overlay">
+              <p>Marketing, Sales, SEO, Content Strategy</p>
+              <div class="socials">
+                <a href="https://shaheedali.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                <a href="https://www.linkedin.com/in/shaheed-ali/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+            <span class="team-card-underline"></span>
+          </div>
+          <p class="name">Arathi</p>
+          <p class="role">Sr. Video editor & motion artist</p>
+          <div class="team-card-details">
+            <p>Marketing, Sales, SEO, Content Strategy</p>
+            <div class="socials">
+              <a href="https://shaheedali.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
+              <a href="https://www.linkedin.com/in/shaheed-ali/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </article>
 
         <article class="team-card" data-reveal-card>
           <div class="team-card-photo">
@@ -250,7 +310,7 @@
             <span class="team-card-underline"></span>
           </div>
           <p class="name">Shaheed Ali</p>
-          <p class="role">Head of Sales & Marketing</p>
+          <p class="role">Sr. Sales & Business Development</p>
           <div class="team-card-details">
             <p>Marketing, Sales, SEO, Content Strategy</p>
             <div class="socials">
@@ -260,7 +320,31 @@
           </div>
         </article>
 
-     
+        <article class="team-card" data-reveal-card>
+          <div class="team-card-photo">
+            <img src="assets/team/Hafsal_Ratio9.jpeg" alt="Hafsal" loading="lazy" />
+            <div class="team-card-overlay">
+              <p>Marketing, Sales, SEO, Content Strategy</p>
+              <div class="socials">
+                <a href="https://shaheedali.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                <a href="https://www.linkedin.com/in/shaheed-ali/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+            <span class="team-card-underline"></span>
+          </div>
+          <p class="name">Hafsal</p>
+          <p class="role">Head of Digital Marketing</p>
+          <div class="team-card-details">
+            <p>Marketing, Sales, SEO, Content Strategy</p>
+            <div class="socials">
+              <a href="https://shaheedali.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
+              <a href="https://www.linkedin.com/in/shaheed-ali/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more <article class="team-card"> blocks here as the team grows —
+             copy one of the above and swap the photo, name, role, bio and links. -->
 
       </div>
     </section>
