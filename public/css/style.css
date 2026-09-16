@@ -754,9 +754,9 @@ body:has(.project-hero) .navbar:not(.is-scrolled) .logo .text-lime {
    Fixed 2-column grid (not auto-fit) so it never wraps to 1 or 3 columns. */
 .team-owners {
   display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 260px));
+  grid-template-columns: repeat(2, minmax(160px, 220px));
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
   margin-bottom: 56px;
 }
 @media (max-width: 639px) {
